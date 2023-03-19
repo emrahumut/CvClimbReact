@@ -1,29 +1,21 @@
 import GridLayout, { Layout } from "react-grid-layout";
-import Name from "./sections/Name";
 import "./Builder.scss";
-import Experience from "./sections/Experience";
-import Summary from "./sections/Summary";
-import Contact from "./sections/Contact";
-import Language from "./sections/Languages";
-import Software from "./sections/Software";
-import Skills from "./sections/Skills";
 import { useState } from "react";
-import Education from "./sections/Education";
-import Interest from "./sections/Interest";
-import Accomplishments from "./sections/Accomplishment";
-import AdditionalInfo from "./sections/AdditionalInfo";
 import { GridLayoutOptions } from "../../layouts/BuilderLayout";
-import Affiliation from "./sections/Affiliation";
-import Certifications from "./sections/Certifications";
-import Custom from "./sections/Custom";
-import Projects from "./sections/Projects";
 import DocumentTool from "./DocumentTool";
+import { SectionModel } from "../../sections";
+import { SECTION_COMPONENT_MAP } from "../../config/section/section.component.config";
+
+const COMPONENT_MAP = SECTION_COMPONENT_MAP;
 
 const Builder = ({
   gridLayoutOptions,
+  sectionsData,
 }: {
   gridLayoutOptions: GridLayoutOptions;
+  sectionsData: Array<SectionModel>;
 }) => {
+  console.log("sectionsData", sectionsData);
   const [layout, setLayout] = useState<Layout[]>([
     { i: "name", x: 0, y: 0, w: 12, h: 1 },
     { i: "summary", x: 0, y: 1, w: 12, h: 1 },
@@ -102,81 +94,18 @@ const Builder = ({
         // containerPadding={[20, 20]}
         // preventCollision={true}
       >
-        <div key="name">
-          <DocumentTool>
-            <Name></Name>
-          </DocumentTool>
-        </div>
-        <div key="summary">
-          <DocumentTool>
-            <Summary></Summary>
-          </DocumentTool>
-        </div>
-        <div key="contact">
-          <DocumentTool>
-            <Contact></Contact>
-          </DocumentTool>
-        </div>
-        <div key="experience">
-          <DocumentTool>
-            <Experience></Experience>
-          </DocumentTool>
-        </div>
-        <div key="language">
-          <DocumentTool>
-            <Language></Language>
-          </DocumentTool>
-        </div>
-        <div key="software">
-          <DocumentTool>
-            <Software></Software>
-          </DocumentTool>
-        </div>
-        <div key="skills">
-          <DocumentTool>
-            <Skills></Skills>
-          </DocumentTool>
-        </div>
-        <div key="education">
-          <DocumentTool>
-            <Education></Education>
-          </DocumentTool>
-        </div>
-        <div key="interest">
-          <DocumentTool>
-            <Interest></Interest>
-          </DocumentTool>
-        </div>
-        <div key="accomplishment">
-          <DocumentTool>
-            <Accomplishments></Accomplishments>
-          </DocumentTool>
-        </div>
-        <div key="additionalInfo">
-          <DocumentTool>
-            <AdditionalInfo></AdditionalInfo>
-          </DocumentTool>
-        </div>
-        <div key="affiliation">
-          <DocumentTool>
-            <Affiliation></Affiliation>
-          </DocumentTool>
-        </div>
-        <div key="certifications">
-          <DocumentTool>
-            <Certifications></Certifications>
-          </DocumentTool>
-        </div>
-        <div key="custom">
-          <DocumentTool>
-            <Custom></Custom>
-          </DocumentTool>
-        </div>
-        <div key="projects">
-          <DocumentTool>
-            <Projects></Projects>
-          </DocumentTool>
-        </div>
+        {sectionsData.map((sectionData) => {
+          const SectionComponent =
+            COMPONENT_MAP[sectionData.sectionType].component;
+
+          return (
+            <div key={sectionData.sectionType}>
+              <DocumentTool>
+                <SectionComponent />
+              </DocumentTool>
+            </div>
+          );
+        })}
       </GridLayout>
     </div>
   );

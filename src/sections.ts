@@ -25,24 +25,24 @@ export enum SectionTypeModel {
 // ]
 
 export interface SectionModel {
-  id: string,
+  id?: string,
   index?: number,
   sectionType: "name" | "contact" | "language" |
-  "hilt" | "summary" | "experience" | "interests" |
+  "skill" | "summary" | "experience" | "interest" |
   "education" | "custom" | "accomplishment" | "software" |
-  "certification" | "affiliations" | "additionalInformation",
+  "certification" | "affiliation" | "additionalInfo",
   name: string,
-  paragraphs: Array<ParagraphModel>,
+  paragraphs?: Array<ParagraphModel>,
 }
 
 export interface ParagraphModel {
-  id: string,
-  docDatas: Array<ParagraphDataModel>
+  id?: string,
+  docDatas?: Array<ParagraphDataModel>
 }
 
 export interface ParagraphDataModel {
   id?: string,
-  index: number,
+  index?: number,
   value: string,
   fieldCD: string,
 }
@@ -50,7 +50,7 @@ export interface ParagraphDataModel {
 export enum FieldCDModel {
   FNAM = "firstName",
   LNAM = "lastName",
-  DCTL = "title", // software developer
+  TTL = "title", // software developer
   STRT = "street",
   STAT = "state",
   CITY = "city",

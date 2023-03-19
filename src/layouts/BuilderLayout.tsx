@@ -4,8 +4,11 @@ import jsPDF from "jspdf";
 import { useRef } from "react";
 import Card from "../components/UI/Card/Card";
 import { ReactGridLayoutProps } from "react-grid-layout";
+import { MOCK_SECTION_DATA } from "../mock/sectionsData";
 
 export interface GridLayoutOptions extends ReactGridLayoutProps {}
+
+const SECTION_DATA = MOCK_SECTION_DATA;
 
 const BuilderLayout = () => {
   const reportTemplateRef: any = useRef(null);
@@ -55,7 +58,10 @@ const BuilderLayout = () => {
       </div> */}
       <div className="builder" ref={reportTemplateRef}>
         <Card>
-          <Builder gridLayoutOptions={gridLayoutOptions}></Builder>
+          <Builder
+            sectionsData={SECTION_DATA}
+            gridLayoutOptions={gridLayoutOptions}
+          ></Builder>
         </Card>
       </div>
     </div>
