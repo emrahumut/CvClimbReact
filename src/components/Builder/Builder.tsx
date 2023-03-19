@@ -43,6 +43,7 @@ const Builder = ({
     //   heigths.push(Math.ceil(elements[i].firstElementChild.offsetHeight / 50));
     // }
 
+    // TODO: Apply for all the layouts
     if (inital) {
       const div: any = document
         .querySelector(".react-grid-item")
@@ -51,7 +52,6 @@ const Builder = ({
       const firstChildHeight = Math.ceil(div.offsetHeight / 50);
       const newLayout = [...event].map((l) => {
         if (l.i === "name") {
-          console.log("lll", l);
           return {
             ...l,
             h: firstChildHeight,
@@ -62,17 +62,6 @@ const Builder = ({
       setLayout(newLayout);
       setInitial(false);
     }
-  };
-  const templates: any = {
-    RT1: {
-      id: "cart",
-      layout: [
-        { i: "a", x: 0, y: 0, w: 12, h: 2 },
-        { i: "b", x: 1, y: 0, w: 3, h: 2 },
-        { i: "c", x: 4, y: 0, w: 1, h: 2 },
-      ],
-    },
-    RT2: {},
   };
   return (
     <div className="document">
