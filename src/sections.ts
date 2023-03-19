@@ -16,21 +16,32 @@ export enum SectionTypeModel {
   PJEC = "projects",
 }
 
-// export const test: Array<SectionModel> = [
-//   {
-//     id: 'a',
-//     sectionType: SectionTypeModel.ACCM,
-//     name: 'a',
-//   }
-// ]
+export enum SectionTypeEnumModel {
+  NAME = "name",
+  CONTACT = "contact",
+  LANGUAGE = "language",
+  SKILL = "skill",
+  SUMMARY = "summary",
+  EXPERIENCE = "experience",
+  INTEREST = "interest",
+  EDUCATION = "education",
+  CUSTOM = "custom",
+  ACCOMPLISHMENT = "accomplishment",
+  SOFTWARE = "software",
+  CERTIFICATION = "certification",
+  AFFILIATION = "affiliation",
+  ADDITIONALINFO = "additionalInfo",
+  PROJECT = "project"
+}
 
 export interface SectionModel {
   id?: string,
   index?: number,
+  // have to be same with SectionTypeEnumModel
   sectionType: "name" | "contact" | "language" |
   "skill" | "summary" | "experience" | "interest" |
   "education" | "custom" | "accomplishment" | "software" |
-  "certification" | "affiliation" | "additionalInfo",
+  "certification" | "affiliation" | "additionalInfo" | "project",
   name: string,
   paragraphs?: Array<ParagraphModel>,
 }

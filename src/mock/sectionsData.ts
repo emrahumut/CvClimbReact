@@ -94,4 +94,10 @@ export const MOCK_SECTION_DATA: Array<SectionModel> = [
         name: "AdditionalInformation",
         paragraphs: [],
     },
+    {
+        id: "nameRANDOM",
+        sectionType: "project",
+        name: "Projects",
+        paragraphs: [],
+    },
 ];

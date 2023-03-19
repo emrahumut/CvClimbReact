@@ -3,7 +3,7 @@ import "./Builder.scss";
 import { useState } from "react";
 import { GridLayoutOptions } from "../../layouts/BuilderLayout";
 import DocumentTool from "./DocumentTool";
-import { SectionModel } from "../../sections";
+import { SectionModel, SectionTypeEnumModel } from "../../sections";
 import { SECTION_COMPONENT_MAP } from "../../config/section/section.component.config";
 
 const COMPONENT_MAP = SECTION_COMPONENT_MAP;
@@ -15,24 +15,25 @@ const Builder = ({
   gridLayoutOptions: GridLayoutOptions;
   sectionsData: Array<SectionModel>;
 }) => {
+
   console.log("sectionsData", sectionsData);
   const [layout, setLayout] = useState<Layout[]>([
-    { i: "name", x: 0, y: 0, w: 12, h: 1 },
-    { i: "summary", x: 0, y: 1, w: 12, h: 1 },
-    { i: "contact", x: 0, y: 3, w: 4, h: 1 },
-    { i: "skills", x: 0, y: 4, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.NAME, x: 0, y: 0, w: 12, h: 1 },
+    { i: SectionTypeEnumModel.SUMMARY, x: 0, y: 1, w: 12, h: 1 },
+    { i: SectionTypeEnumModel.CONTACT, x: 0, y: 3, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.SKILL, x: 0, y: 4, w: 4, h: 1 },
     // 2. column
-    { i: "experience", x: 4, y: 4, w: 8, h: 1 },
-    { i: "education", x: 4, y: 5, w: 8, h: 1 },
-    { i: "language", x: 0, y: 5, w: 4, h: 1 },
-    { i: "software", x: 0, y: 6, w: 4, h: 1 },
-    { i: "interest", x: 4, y: 7, w: 8, h: 1 },
-    { i: "accomplishment", x: 4, y: 8, w: 8, h: 1 },
-    { i: "additionalInfo", x: 4, y: 9, w: 8, h: 1 },
-    { i: "affiliation", x: 0, y: 10, w: 4, h: 1 },
-    { i: "certifications", x: 4, y: 11, w: 8, h: 1 },
-    { i: "custom", x: 0, y: 11, w: 4, h: 1 },
-    { i: "projects", x: 4, y: 12, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.SKILL, x: 4, y: 4, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.EDUCATION, x: 4, y: 5, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.LANGUAGE, x: 0, y: 5, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.SOFTWARE, x: 0, y: 6, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.INTEREST, x: 4, y: 7, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.ACCOMPLISHMENT, x: 4, y: 8, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.ADDITIONALINFO, x: 4, y: 9, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.AFFILIATION, x: 0, y: 10, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.CERTIFICATION, x: 4, y: 11, w: 8, h: 1 },
+    { i: SectionTypeEnumModel.CUSTOM, x: 0, y: 11, w: 4, h: 1 },
+    { i: SectionTypeEnumModel.PROJECT, x: 4, y: 12, w: 8, h: 1 },
   ]);
   const [inital, setInitial] = useState<boolean>(true);
   const handleLayoutChange = (event: any) => {

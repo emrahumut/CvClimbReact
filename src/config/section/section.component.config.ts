@@ -9,51 +9,56 @@ import Experience from "../../components/Builder/sections/Experience";
 import Interest from "../../components/Builder/sections/Interest";
 import Language from "../../components/Builder/sections/Languages";
 import Name from "../../components/Builder/sections/Name";
+import Projects from "../../components/Builder/sections/Projects";
 import Skill from "../../components/Builder/sections/Skill";
 import Software from "../../components/Builder/sections/Software";
 import Summary from "../../components/Builder/sections/Summary";
+import { SectionTypeEnumModel } from "../../sections";
 
 export const SECTION_COMPONENT_MAP = {
-    name: {
+    [SectionTypeEnumModel.NAME]: {
         component: Name,
     },
-    contact: {
+    [SectionTypeEnumModel.CONTACT]: {
         component: Contact,
     },
-    language: {
+    [SectionTypeEnumModel.LANGUAGE]: {
         component: Language,
     },
-    skill: {
+    [SectionTypeEnumModel.SKILL]: {
         component: Skill,
     },
-    summary: {
+    [SectionTypeEnumModel.SUMMARY]: {
         component: Summary,
     },
-    experience: {
+    [SectionTypeEnumModel.EXPERIENCE]: {
         component: Experience,
     },
-    interest: {
+    [SectionTypeEnumModel.INTEREST]: {
         component: Interest,
     },
-    education: {
+    [SectionTypeEnumModel.EDUCATION]: {
         component: Education,
     },
-    custom: {
+    [SectionTypeEnumModel.CUSTOM]: {
         component: Custom,
     },
-    accomplishment: {
+    [SectionTypeEnumModel.ACCOMPLISHMENT]: {
         component: Accomplishments,
     },
-    software: {
+    [SectionTypeEnumModel.SOFTWARE]: {
         component: Software,
     },
-    certification: {
+    [SectionTypeEnumModel.CERTIFICATION]: {
         component: Certifications,
     },
-    affiliation: {
+    [SectionTypeEnumModel.AFFILIATION]: {
         component: Affiliation,
     },
-    additionalInfo: {
+    [SectionTypeEnumModel.ADDITIONALINFO]: {
         component: AdditionalInfo,
+    },
+    [SectionTypeEnumModel.PROJECT]: {
+        component: Projects,
     },
 };
