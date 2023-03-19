@@ -1,0 +1,17 @@
+.document {
+    min-height: 792px;
+    width: 595px;
+    font-size: 9px !important;
+    .react-grid-layout {
+        // width: 595px;
+        .react-grid-item {
+        }
+        // .react-draggable-dragging {
+        //     cursor: grab;
+        // }
+    }
+}
+
+.react-grid-item:hover {
+    transform: scale(1.2);
+}

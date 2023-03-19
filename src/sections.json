@@ -1,0 +1,28 @@
+{
+    "sections": [
+        {
+            "id": "random",
+            "value": "Emrah Umut",
+            "fieldCD": "FIELD_FNAM",
+            "zoneName": ""
+        },
+        {
+            "id": "random",
+            "value": "KOC",
+            "fieldCD": "FIELD_LNAM",
+            "zoneName": ""
+        },
+        {
+            "id": "random",
+            "value": "Software Developer",
+            "fieldCD": "FIELD_DCTL",
+            "zoneName": ""
+        },
+        {
+            "id": "random",
+            "value": "Software Developer",
+            "fieldCD": "FIELD_DCTL",
+            "zoneName": ""
+        }
+    ]
+}

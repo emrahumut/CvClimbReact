@@ -1,0 +1,12 @@
+.builder-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    .customize {
+        width: 40%;
+    }
+    .react-grid-layout {
+        font-size: 11px;
+    }
+}
