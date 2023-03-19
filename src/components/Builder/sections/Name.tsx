@@ -1,4 +1,5 @@
-const Name = () => {
+const Name = (sectionData: any) => {
+  console.log("sectionData",sectionData);
   const data = {
     firstName: "Abidin",
     lastName: "KILLIBACAK",

@@ -1,6 +1,13 @@
+import { SectionModel } from "../../sections";
 import "./DocumentTool.scss";
 
-const DocumentTool = ({ children }: any) => {
+const DocumentTool = ({
+  children,
+  sectionData,
+}: {
+  children: any;
+  sectionData: SectionModel;
+}) => {
   const handleEditSection = (event: any) => {
     console.log("HANDLE EDIT");
   };

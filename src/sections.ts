@@ -1,4 +1,4 @@
-export enum SectionTypeModel {
+export enum SectionEnumModel {
   NAME = "name",
   CTNC = "contact",
   LANG = "language",

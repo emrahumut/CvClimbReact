@@ -15,8 +15,7 @@ const Builder = ({
   gridLayoutOptions: GridLayoutOptions;
   sectionsData: Array<SectionModel>;
 }) => {
-
-  console.log("sectionsData", sectionsData);
+  // console.log("sectionsData", sectionsData);
   const [layout, setLayout] = useState<Layout[]>([
     { i: SectionTypeEnumModel.NAME, x: 0, y: 0, w: 12, h: 1 },
     { i: SectionTypeEnumModel.SUMMARY, x: 0, y: 1, w: 12, h: 1 },
@@ -101,8 +100,8 @@ const Builder = ({
 
           return (
             <div key={sectionData.sectionType}>
-              <DocumentTool>
-                <SectionComponent />
+              <DocumentTool sectionData={sectionData}>
+                <SectionComponent {...sectionData} />
               </DocumentTool>
             </div>
           );
