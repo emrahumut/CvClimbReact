@@ -1,8 +1,8 @@
 const Name = () => {
   const data = {
-    firstName: "Emrah Umut",
-    lastName: "KOC",
-    title: "Software Developer",
+    firstName: "Abidin",
+    lastName: "KILLIBACAK",
+    title: "SÜFTVEYIR Developer",
   };
   return (
     <div>

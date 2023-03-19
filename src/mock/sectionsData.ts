@@ -9,9 +9,9 @@ export const MOCK_SECTION_DATA: Array<SectionModel> = [
             {
                 id: "nameParag",
                 docDatas: [
-                    { value: "Emrah Umut", fieldCD: "FNAM" },
-                    { value: "KOC", fieldCD: "LNAM" },
-                    { value: "Software Developer", fieldCD: "TTL" },
+                    { value: "Abidin", fieldCD: "FNAM" },
+                    { value: "KILLIBACAK", fieldCD: "LNAM" },
+                    { value: "SÜTVEYIR Developer", fieldCD: "TTL" },
                 ],
             },
         ],
