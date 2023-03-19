@@ -74,9 +74,6 @@ const Builder = ({
     },
     RT2: {},
   };
-  const test = () => {
-    console.log("asdsadsd");
-  };
   return (
     <div className="document">
       <GridLayout
