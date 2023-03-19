@@ -1,0 +1,77 @@
+.section-container {
+    height: 100%;
+    position: relative;
+}
+.section-container:hover {
+    cursor: pointer;
+}
+.react-grid-item:hover {
+    // border: 1px #ccc dotted;
+    .tools {
+        display: block !important;
+    }
+}
+.react-grid-item {
+    pointer-events: auto;
+}
+.react-grid-item:hover {
+    border: 1px dotted #ccc;
+}
+// .react-grid-item:hover::after {
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: -10px;
+//     left: -10px;
+//     pointer-events: auto;
+//     border: 1px dotted #ccc;
+//     padding: 10px;
+// }
+
+.tools {
+    display: none;
+    position: absolute;
+    height: 98%;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    width: 40px;
+    right: 0px;
+    top: 0px;
+    button {
+        padding: 0;
+    }
+    font-size: 12px;
+
+    .drag-tool {
+        font-size: 12px;
+        cursor: grab;
+        // height: 40px;
+        // width: 40px;
+        // background-color: red;
+    }
+}
+
+.react-draggable-dragging {
+    .drag-tool {
+        cursor: grabbing;
+    }
+}
+
+// .react-grid-item:hover {
+//     .tools {
+//         display: block;
+//     }
+// }
+// .section:hover::after {
+//     // transform: scale(1.1);
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: -15px;
+//     left: -15px;
+//     pointer-events: auto;
+//     border: 1px dotted #ccc;
+//     padding: 15px;
+// }

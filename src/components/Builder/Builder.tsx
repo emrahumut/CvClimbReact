@@ -52,11 +52,11 @@ const Builder = ({
     // }
 
     if (inital) {
-      const div: any = document.querySelector(".react-grid-item");
+      const div: any = document
+        .querySelector(".react-grid-item")
+        ?.querySelector(".section");
 
-      const firstChildHeight = Math.floor(
-        div.firstElementChild.offsetHeight / 50
-      );
+      const firstChildHeight = Math.ceil(div.offsetHeight / 50);
       const newLayout = [...event].map((l) => {
         if (l.i === "name") {
           console.log("lll", l);
@@ -82,6 +82,9 @@ const Builder = ({
     },
     RT2: {},
   };
+  const test = () => {
+    console.log("asdsadsd");
+  };
   return (
     <div className="document">
       <GridLayout
@@ -92,7 +95,8 @@ const Builder = ({
         rowHeight={50}
         width={595}
         autoSize={true}
-        // draggableHandle={".emrah"}
+        draggableHandle={".drag-tool"}
+        // resizeHandle={".resize-tool"}
         onLayoutChange={handleLayoutChange}
         // useCSSTransforms={false}
         // containerPadding={[20, 20]}
@@ -104,46 +108,74 @@ const Builder = ({
           </DocumentTool>
         </div>
         <div key="summary">
-          <Summary></Summary>
+          <DocumentTool>
+            <Summary></Summary>
+          </DocumentTool>
         </div>
         <div key="contact">
-          <Contact></Contact>
+          <DocumentTool>
+            <Contact></Contact>
+          </DocumentTool>
         </div>
         <div key="experience">
-          <Experience></Experience>
+          <DocumentTool>
+            <Experience></Experience>
+          </DocumentTool>
         </div>
         <div key="language">
-          <Language></Language>
+          <DocumentTool>
+            <Language></Language>
+          </DocumentTool>
         </div>
         <div key="software">
-          <Software></Software>
+          <DocumentTool>
+            <Software></Software>
+          </DocumentTool>
         </div>
         <div key="skills">
-          <Skills></Skills>
+          <DocumentTool>
+            <Skills></Skills>
+          </DocumentTool>
         </div>
         <div key="education">
-          <Education></Education>
+          <DocumentTool>
+            <Education></Education>
+          </DocumentTool>
         </div>
         <div key="interest">
-          <Interest></Interest>
+          <DocumentTool>
+            <Interest></Interest>
+          </DocumentTool>
         </div>
         <div key="accomplishment">
-          <Accomplishments></Accomplishments>
+          <DocumentTool>
+            <Accomplishments></Accomplishments>
+          </DocumentTool>
         </div>
         <div key="additionalInfo">
-          <AdditionalInfo></AdditionalInfo>
+          <DocumentTool>
+            <AdditionalInfo></AdditionalInfo>
+          </DocumentTool>
         </div>
         <div key="affiliation">
-          <Affiliation></Affiliation>
+          <DocumentTool>
+            <Affiliation></Affiliation>
+          </DocumentTool>
         </div>
         <div key="certifications">
-          <Certifications></Certifications>
+          <DocumentTool>
+            <Certifications></Certifications>
+          </DocumentTool>
         </div>
         <div key="custom">
-          <Custom></Custom>
+          <DocumentTool>
+            <Custom></Custom>
+          </DocumentTool>
         </div>
         <div key="projects">
-          <Projects></Projects>
+          <DocumentTool>
+            <Projects></Projects>
+          </DocumentTool>
         </div>
       </GridLayout>
     </div>
