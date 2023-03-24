@@ -1,5 +1,5 @@
-const Projects = (sectionData) => {
-  console.log("sectionData", sectionData);
+const Projects = (props:any) => {
+  console.log("sectionData", props);
   return <div>Projects</div>;
 };
 

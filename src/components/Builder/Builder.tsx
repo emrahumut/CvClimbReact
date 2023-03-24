@@ -22,6 +22,7 @@ const Builder = ({
     { i: SectionTypeEnumModel.CONTACT, x: 0, y: 3, w: 4, h: 1 },
     { i: SectionTypeEnumModel.SKILL, x: 0, y: 4, w: 4, h: 1 },
     // 2. column
+    { i: SectionTypeEnumModel.EXPERIENCE, x: 4, y: 3, w: 8, h: 1 },
     { i: SectionTypeEnumModel.SKILL, x: 4, y: 4, w: 8, h: 1 },
     { i: SectionTypeEnumModel.EDUCATION, x: 4, y: 5, w: 8, h: 1 },
     { i: SectionTypeEnumModel.LANGUAGE, x: 0, y: 5, w: 4, h: 1 },
@@ -36,7 +37,7 @@ const Builder = ({
   ]);
   const [inital, setInitial] = useState<boolean>(true);
   const handleLayoutChange = (event: any) => {
-    console.log("event", event);
+    // console.log("event", event);
     // const elements: any = document.querySelectorAll(".react-grid-item");
     // const heigths: any[] = [];
     // for (let i = 0; i < elements.length; i++) {
