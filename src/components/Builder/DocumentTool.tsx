@@ -10,7 +10,6 @@ const DocumentTool = ({
   sectionData: SectionModel;
 }) => {
   const navigate = useNavigate();
-
   const handleEditSection = (event: any) => {
     console.log("HANDLE EDIT", sectionData);
     navigate(`${sectionData.sectionType}`);
@@ -23,7 +22,11 @@ const DocumentTool = ({
 
         <button onClick={handleEditSection}>EDIT</button>
       </div>
-      <div className="section" onClick={handleEditSection}>
+      <div
+        id={sectionData.name}
+        className="section"
+        onClick={handleEditSection}
+      >
         {children}
       </div>
     </div>

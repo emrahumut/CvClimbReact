@@ -8,6 +8,8 @@ import { SECTION_COMPONENT_MAP } from "../../config/section/section.component.co
 
 const COMPONENT_MAP = SECTION_COMPONENT_MAP;
 
+const ROW_HEIGHT = 10;
+
 const Builder = ({
   gridLayoutOptions,
   sectionsData,
@@ -15,6 +17,7 @@ const Builder = ({
   gridLayoutOptions: GridLayoutOptions;
   sectionsData: Array<SectionModel>;
 }) => {
+  // const gridLayoutRef: any = useRef(null);
   // console.log("sectionsData", sectionsData);
   const [layout, setLayout] = useState<Layout[]>([
     { i: SectionTypeEnumModel.NAME, x: 0, y: 0, w: 12, h: 1 },
@@ -36,7 +39,7 @@ const Builder = ({
     { i: SectionTypeEnumModel.PROJECT, x: 4, y: 12, w: 8, h: 1 },
   ]);
   const [inital, setInitial] = useState<boolean>(true);
-  const handleLayoutChange = (event: any) => {
+  const handleLayoutChange = (layoutItems: any) => {
     // console.log("event", event);
     // const elements: any = document.querySelectorAll(".react-grid-item");
     // const heigths: any[] = [];
@@ -46,19 +49,28 @@ const Builder = ({
 
     // TODO: Apply for all the layouts
     if (inital) {
-      const div: any = document
-        .querySelector(".react-grid-item")
-        ?.querySelector(".section");
+      // TODO: alternative ways.
+      const gridItems: any = document
+        .querySelector(".react-grid-layout")
+        ?.querySelectorAll(".react-grid-item");
+      let newLayout: any = [];
+      gridItems.forEach((gridItem) => {
+        const section = gridItem.querySelector(".section");
+        const sectionId = gridItem.querySelector(".section").getAttribute("id");
+        const sectionFirstChild = section.firstChild;
+        const firstChildHeight = Math.ceil(
+          sectionFirstChild.offsetHeight / ROW_HEIGHT
+        );
 
-      const firstChildHeight = Math.ceil(div.offsetHeight / 50);
-      const newLayout = [...event].map((l) => {
-        if (l.i === "name") {
-          return {
-            ...l,
-            h: firstChildHeight,
-          };
-        }
-        return l;
+        layoutItems.forEach((item) => {
+          if (item.i === sectionId) {
+            newLayout.push({
+              ...item,
+              h: firstChildHeight,
+              minH: firstChildHeight,
+            });
+          }
+        });
       });
       setLayout(newLayout);
       setInitial(false);
@@ -67,14 +79,16 @@ const Builder = ({
   return (
     <div className="document">
       <GridLayout
+        // ref={gridLayoutRef}
         className="layout"
         layout={layout}
         cols={gridLayoutOptions.cols}
         // isResizable={false}
-        rowHeight={50}
+        rowHeight={ROW_HEIGHT}
         width={595}
         autoSize={true}
         draggableHandle={".drag-tool"}
+        margin={[0, 0]}
         // resizeHandle={".resize-tool"}
         onLayoutChange={handleLayoutChange}
         // useCSSTransforms={false}
