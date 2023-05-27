@@ -8,7 +8,7 @@ import { SECTION_COMPONENT_MAP } from "../../config/section/section.component.co
 
 const COMPONENT_MAP = SECTION_COMPONENT_MAP;
 
-const ROW_HEIGHT = 10;
+const ROW_HEIGHT = 20;
 
 const Builder = ({
   gridLayoutOptions,

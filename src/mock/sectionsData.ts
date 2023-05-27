@@ -3,7 +3,7 @@ import { SectionModel } from "../sections";
 export const MOCK_SECTION_DATA: Array<SectionModel> = [
     {
         id: "nameRANDOM",
-        sectionType: "name",
+        sectionType: "name", // very unique
         name: "name",
         paragraphs: [
             {
@@ -31,7 +31,7 @@ export const MOCK_SECTION_DATA: Array<SectionModel> = [
     {
         id: "nameRANDOM",
         sectionType: "skill",
-        name: "skills",
+        name: "skill",
         paragraphs: [],
     },
     {
@@ -49,7 +49,7 @@ export const MOCK_SECTION_DATA: Array<SectionModel> = [
     {
         id: "nameRANDOM",
         sectionType: "interest",
-        name: "interests",
+        name: "interest",
         paragraphs: [],
     },
     {
@@ -85,19 +85,19 @@ export const MOCK_SECTION_DATA: Array<SectionModel> = [
     {
         id: "nameRANDOM",
         sectionType: "affiliation",
-        name: "affiliations",
+        name: "affiliation",
         paragraphs: [],
     },
     {
         id: "nameRANDOM",
         sectionType: "additionalInfo",
-        name: "additionalInformation",
+        name: "additionalInfo",
         paragraphs: [],
     },
     {
         id: "nameRANDOM",
         sectionType: "project",
-        name: "projects",
+        name: "project",
         paragraphs: [],
     },
 ];
